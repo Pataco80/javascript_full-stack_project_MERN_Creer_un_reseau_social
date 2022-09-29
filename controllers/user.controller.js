@@ -8,17 +8,17 @@ module.exports.getAllUsers = async (req, res) => {
 
 module.exports.userInfo = (req, res) => {
   if (!ObjectID.isValid(req.params.id))
-    return res.status(400).send('unkdown:' + req.params.id)
+    return res.status(400).send('ID unknown : ' + req.params.id)
 
   UserModel.findById(req.params.id, (err, docs) => {
-    !err ? res.status(200).send(docs) : console.log('ID unkdown: ' + err)
+    if (!err) res.send(docs)
+    else console.log('ID unknown : ' + err)
   }).select('-password')
 }
 
-//
 module.exports.updateUser = async (req, res) => {
   if (!ObjectID.isValid(req.params.id))
-    return res.status(400).send('unkdown:' + req.params.id)
+    return res.status(400).send('ID unknown : ' + req.params.id)
 
   try {
     await UserModel.findOneAndUpdate(
