@@ -31,10 +31,10 @@ module.exports.updateUser = async (req, res) => {
       { new: true, upsert: true, setDefaultsOnInsert: true },
       (err, docs) => {
         if (!err) return res.send(docs)
-        //if (err) return res.status(500).send({ try_message: err })
+        if (err) return res.status(500).send({ try_message: err })
       }
     )
   } catch (err) {
-    return res.status(500).json({ catch_message: err })
+    return res.status(500).json({ catch_message: err }) // try ne fonctionne pas mais les données passent car si je fais un get sur postman après avoir redémarré le serveur, la bio apparait. le crash se fait au moment du PUT depuis postman.
   }
 }

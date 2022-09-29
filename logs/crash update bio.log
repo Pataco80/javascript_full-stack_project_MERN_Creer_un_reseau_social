@@ -1,0 +1,29 @@
+node:events:491
+      throw er; // Unhandled 'error' event
+      ^
+
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:393:5)
+    at ServerResponse.setHeader (node:_http_outgoing:607:11)
+    at ServerResponse.header (/Users/ricardodovale/Sites/YouTube Tutorials/From Scratch/javascript_full-stack_project_MERN_Creer_un_reseau_social/node_modules/express/lib/response.js:794:10)
+    at ServerResponse.send (/Users/ricardodovale/Sites/YouTube Tutorials/From Scratch/javascript_full-stack_project_MERN_Creer_un_reseau_social/node_modules/express/lib/response.js:174:12)
+    at ServerResponse.json (/Users/ricardodovale/Sites/YouTube Tutorials/From Scratch/javascript_full-stack_project_MERN_Creer_un_reseau_social/node_modules/express/lib/response.js:278:15)
+    at ServerResponse.send (/Users/ricardodovale/Sites/YouTube Tutorials/From Scratch/javascript_full-stack_project_MERN_Creer_un_reseau_social/node_modules/express/lib/response.js:162:21)
+    at /Users/ricardodovale/Sites/YouTube Tutorials/From Scratch/javascript_full-stack_project_MERN_Creer_un_reseau_social/controllers/user.controller.js:33:30
+    at /Users/ricardodovale/Sites/YouTube Tutorials/From Scratch/javascript_full-stack_project_MERN_Creer_un_reseau_social/node_modules/mongoose/lib/model.js:5174:18
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+Emitted 'error' event on Function instance at:
+    at /Users/ricardodovale/Sites/YouTube Tutorials/From Scratch/javascript_full-stack_project_MERN_Creer_un_reseau_social/node_modules/mongoose/lib/model.js:5176:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+
+Node.js v18.9.0
+[nodemon] app crashed - waiting for file changes before starting...
+
+// Postman message:
+{
+  "catch_message": {
+    "originalStack": "Error\n    at model.Query._wrappedThunk [as _findOneAndUpdate] (/Users/ricardodovale/Sites/YouTube Tutorials/From Scratch/javascript_full-stack_project_MERN_Creer_un_reseau_social/node_modules/mongoose/lib/helpers/query/wrapThunk.js:27:28)\n    at /Users/ricardodovale/Sites/YouTube Tutorials/From Scratch/javascript_full-stack_project_MERN_Creer_un_reseau_social/node_modules/kareem/index.js:334:18\n    at _next (/Users/ricardodovale/Sites/YouTube Tutorials/From Scratch/javascript_full-stack_project_MERN_Creer_un_reseau_social/node_modules/kareem/index.js:128:16)\n    at /Users/ricardodovale/Sites/YouTube Tutorials/From Scratch/javascript_full-stack_project_MERN_Creer_un_reseau_social/node_modules/kareem/index.js:555:30\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)"
+  }
+}

@@ -1,4 +1,4 @@
-const UserModel = require('../models/user.model')
+const UserModel = require("../models/user.model")
 
 module.exports.signUp = async (req, res) => {
   console.log(req.body)
